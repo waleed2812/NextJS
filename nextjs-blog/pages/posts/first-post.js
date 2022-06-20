@@ -1,16 +1,40 @@
-import Link from 'next/link';
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import Script from "next/script";
 
 export default function FirstPost() {
   return (
     <>
+      <Head>
+        <title>First Post</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Script
+        src="https://connect.facebook.net/en_US/sdk.js"
+        strategy="lazyOnload"
+        onLoad={() =>
+          console.log(`script loaded correctly, window.FB has been populated`)
+        }
+      />
       <h1>First Post</h1>
       <h2>
         <Link href="/">
           <a>Back to home</a>
         </Link>
       </h2>
+      <Image
+        src="/profile.jpeg" // Route of the image file
+        height={144} // Desired size with correct aspect ratio
+        width={144} // Desired size with correct aspect ratio
+        alt="Your Name"
+      />
+      <Image
+        src="/assets/profile.jpg" // Route of the image file
+        height={144} // Desired size with correct aspect ratio
+        width={144} // Desired size with correct aspect ratio
+        alt="Your Name"
+      />
     </>
   );
 }
-
-// https://nextjs.org/learn/basics/assets-metadata-css
