@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "prod": "next start",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next dev"
+    "start": "next start"
   },
   "dependencies": {
     "classnames": "^2.3.1",
